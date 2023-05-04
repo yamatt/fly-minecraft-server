@@ -1,25 +1,30 @@
-app = "mc-server-eTeir6Ri"
+# fly.toml app configuration file generated for mc-server-inoonaey on 2023-05-04T21:06:11+01:00
+#
+# See https://fly.io/docs/reference/configuration/ for information about how to use this file.
+#
+
+app = "mc-server-inoonaey"
 primary_region = "lhr"
 
 [build]
   image = "itzg/minecraft-server:latest"
 
+[env]
+  EULA = "TRUE"
+
+[mounts]
+  destination = "/data"
+  source = "mc-server"
+
 [[services]]
   internal_port = 25565
+
   [[services.ports]]
-    port = 25565
     handlers = ["tls"]
+    port = 25565
+
   [[services.tcp_checks]]
     grace_period = "15s"
     interval = "60s"
     restart_limit = 0
     timeout = "2s"
-
-[mounts]
-  source="mc-server"
-  destination="/data"
-
-
-[env]
-  EULA = "TRUE"
-
