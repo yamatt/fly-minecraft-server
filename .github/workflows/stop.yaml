@@ -6,7 +6,7 @@ on:
     inputs:
       server-name:
         description: The name of the server to run
-        default: ${{ vars.DEFAULT_SERVER_NAME }}
+        default: mc-server-inoony
         required: false
         type: string
 
