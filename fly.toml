@@ -1,0 +1,25 @@
+app = "mc-server-001"
+primary_region = "lhr"
+
+[build]
+  image = "itzg/minecraft-server:latest"
+
+[[services]]
+  internal_port = 25565
+  [[services.ports]]
+    port = 25565
+    handlers = ["tls"]
+  [[services.tcp_checks]]
+    grace_period = "15s"
+    interval = "60s"
+    restart_limit = 0
+    timeout = "2s"
+
+[mounts]
+  source="mc-server"
+  destination="/data"
+
+
+[env]
+  EULA = "TRUE
+

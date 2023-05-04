@@ -1,0 +1,19 @@
+---
+name: Stop Minecraft server
+
+on:
+  push:
+    branches:
+    - main
+  workflow_dispatch: {}
+
+jobs:
+  start-mc-server:
+    name: Start Minecraft Server
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@v3
+      - uses: superfly/flyctl-actions/setup-flyctl@master
+      - run: flyctl destroy --yes
+        env:
+          FLY_API_TOKEN: ${{ secrets.FLY_API_TOKEN }}
