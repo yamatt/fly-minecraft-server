@@ -1,4 +1,4 @@
-# fly.toml app configuration file generated for mc-server-inoonaey on 2023-05-04T21:06:11+01:00
+# fly.toml app configuration file generated for mc-server-inoonaey on 2023-05-04T21:14:37+01:00
 #
 # See https://fly.io/docs/reference/configuration/ for information about how to use this file.
 #
@@ -14,7 +14,7 @@ primary_region = "lhr"
 
 [mounts]
   destination = "/data"
-  source = "mc-server"
+  source = "mc_server_inoonaey"
 
 [[services]]
   internal_port = 25565
