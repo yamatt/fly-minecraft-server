@@ -16,7 +16,7 @@ jobs:
       - uses: superfly/flyctl-actions/setup-flyctl@master
       - run: |
           flyctl launch \
-            --generate-name \
+            --name mc-server-inoonaey \
             --copy-config \
             --now
         env:
