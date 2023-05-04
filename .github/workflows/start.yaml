@@ -2,7 +2,7 @@
 name: Start Minecraft server
 
 on:
-  workflow_call:
+  workflow_dispatch:
     inputs:
       server-name:
         description: The name of the server to run

@@ -2,7 +2,13 @@
 name: Stop Minecraft server
 
 on:
-  workflow_dispatch: {}
+  workflow_dispatch:
+    inputs:
+      server-name:
+        description: The name of the server to run
+        default: ${{ vars.DEFAULT_SERVER_NAME }}
+        required: false
+        type: string
 
 jobs:
   start-mc-server:
