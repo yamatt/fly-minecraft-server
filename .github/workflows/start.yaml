@@ -2,10 +2,13 @@
 name: Start Minecraft server
 
 on:
-  push:
-    branches:
-    - main
-  workflow_dispatch: {}
+  workflow_call:
+    inputs:
+      server-name:
+        description: The name of the server to run
+        default: ${{ vars.DEFAULT_SERVER_NAME }}
+        required: false
+        type: string
 
 jobs:
   start-mc-server:
@@ -16,7 +19,7 @@ jobs:
       - uses: superfly/flyctl-actions/setup-flyctl@master
       - run: |
           flyctl launch \
-            --name mc-server-inoonaey \
+            --name ${{ inputs.username }} \
             --copy-config \
             --now
         env:
