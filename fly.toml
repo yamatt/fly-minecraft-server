@@ -22,9 +22,3 @@ primary_region = "lhr"
   [[services.ports]]
     handlers = ["tls"]
     port = 25565
-
-  [[services.tcp_checks]]
-    grace_period = "15s"
-    interval = "60s"
-    restart_limit = 0
-    timeout = "2s"
