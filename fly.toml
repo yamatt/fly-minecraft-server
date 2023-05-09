@@ -11,6 +11,11 @@ primary_region = "lhr"
 
 [env]
   EULA = "TRUE"
+  ENABLE_AUTOSTOP         = "TRUE"
+  AUTOSTOP_TIMEOUT_EST    = 120
+  AUTOSTOP_TIMEOUT_INIT   = 120
+  MEMORY                  = "1G"
+  AUTOSTOP_PKILL_USE_SUDO = "TRUE"
 
 [mounts]
   destination = "/data"
