@@ -22,8 +22,8 @@ primary_region = "lhr"
   source = "mc_server_inoonaey"
 
 [[services]]
+  protocol = "tcp"
   internal_port = 25565
 
   [[services.ports]]
-    handlers = ["tls"]
     port = 25565
