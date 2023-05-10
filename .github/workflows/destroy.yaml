@@ -1,5 +1,5 @@
 ---
-name: Stop Minecraft server
+name: Destory Minecraft App
 
 on:
   workflow_dispatch:

@@ -1,10 +1,10 @@
 ---
-name: Start Minecraft server
+name: Build Minecraft App
 
 on:
   push:
     branches:
-    - main
+      - main
   workflow_dispatch:
     inputs:
       server-name:
