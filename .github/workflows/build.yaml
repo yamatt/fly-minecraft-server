@@ -2,6 +2,9 @@
 name: Start Minecraft server
 
 on:
+  push:
+    branches:
+    - main
   workflow_dispatch:
     inputs:
       server-name:
