@@ -19,7 +19,7 @@ primary_region = "lhr"
 
 [mounts]
   destination = "/data"
-  source = "mc_server_inoonaey"
+  source = "mc_server"
 
 [[services]]
   protocol = "tcp"
