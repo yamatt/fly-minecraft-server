@@ -2,13 +2,7 @@
 name: Destory Minecraft App
 
 on:
-  workflow_dispatch:
-    inputs:
-      server-name:
-        description: The name of the server to run
-        default: mc-server-inoony
-        required: false
-        type: string
+  workflow_dispatch: {}
 
 jobs:
   destroy-mc-app:
