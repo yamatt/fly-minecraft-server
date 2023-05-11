@@ -28,7 +28,6 @@ jobs:
         run: flyctl scale memory 2048
       - name: Deploy
         run: |
-          flyctl deploy run \
-            --name "mc-server" \
+          flyctl deploy \
             --force-machines \
             --detach
