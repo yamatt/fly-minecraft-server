@@ -23,6 +23,6 @@ jobs:
           --region lhr \
           --yes
       - name: Add IP
-        run: flyctl ips allocate-v4
+        run: flyctl ips allocate-v4 --yes
       - name: Deploy
         run: flyctl machine run --name "mc-server" --memory 2048
