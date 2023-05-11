@@ -24,10 +24,10 @@ jobs:
           --yes
       - name: Add IP
         run: flyctl ips allocate-v4 --yes
-      - name: Scale App
-        run: flyctl scale memory 2048
       - name: Deploy
         run: |
           flyctl deploy \
             --force-machines \
             --detach
+      - name: Scale Machine
+        run: flyctl scale memory 2048
