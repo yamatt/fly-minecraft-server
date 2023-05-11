@@ -21,7 +21,7 @@ jobs:
         run: |
           flyctl volumes create mc_server \
           --region lhr \
-          -- yes
+          --yes
       - name: Add IP
         run: flyctl ips allocate-v4
       - name: Deploy
