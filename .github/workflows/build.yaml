@@ -18,7 +18,10 @@ jobs:
             flyctl apps create \
               --name mc-server
       - name: Add disk
-        run: flyctl volumes create mc_server --region lhr
+        run: |
+          flyctl volumes create mc_server \
+          --region lhr \
+          -- yes
       - name: Add IP
         run: flyctl ips allocate-v4
       - name: Deploy
