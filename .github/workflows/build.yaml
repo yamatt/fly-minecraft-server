@@ -14,7 +14,7 @@ jobs:
       - uses: actions/checkout@v3
       - uses: superfly/flyctl-actions/setup-flyctl@master
       - name: Set V2 as default
-        run: fly orgs apps-v2 default-on personal
+        run: flyctl orgs apps-v2 default-on personal
       - name: Build app from fly.toml
         run: |
             flyctl apps create \
