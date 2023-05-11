@@ -13,6 +13,8 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - uses: superfly/flyctl-actions/setup-flyctl@master
+      - name: Set V2 as default
+        run: fly orgs apps-v2 default-on personal
       - name: Build app from fly.toml
         run: |
             flyctl apps create \
@@ -25,10 +27,7 @@ jobs:
       - name: Add IP
         run: flyctl ips allocate-v4 --yes
       - name: Deploy
-        run: |
-          flyctl deploy \
-            --force-machines \
-            --detach
+        run: flyctl deploy --detach
       - name: Scale Machine Memory
         run: flyctl scale memory 2048
       - name: Scale Machine CPU
