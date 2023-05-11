@@ -2,9 +2,7 @@
 name: Build Minecraft App
 
 on:
-  push:
-    branches:
-      - main
+  workflow_dispatch: {}
 
 jobs:
   build-mc-app:
@@ -20,6 +18,8 @@ jobs:
             flyctl apps create \
               --name mc-server
       - name: Add disk
-        run: flyctl volumes create mc_server
+        run: flyctl volumes create mc_server --region lhr
       - name: Add IP
         run: flyctl ips allocate-v4
+      - name: Deploy
+        run: flyctl machine run --name "mc-server" --memory 2048
