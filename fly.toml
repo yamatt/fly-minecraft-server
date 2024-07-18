@@ -36,3 +36,8 @@ kill_timeout = '5s'
     type = 'connections'
     hard_limit = 25
     soft_limit = 20
+
+[[vm]]
+  memory = '1gb'
+  cpu_kind = 'shared'
+  cpus = 1
