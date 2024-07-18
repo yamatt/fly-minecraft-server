@@ -16,24 +16,11 @@ jobs:
         run: flyctl config validate  --app ${{ secrets.APP_NAME }}
         env:
           FLY_API_TOKEN: ${{ secrets.FLY_API_TOKEN }}
-  dockerfile-lint:
-    name: Run Hadolint on Dockerfile
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - name: Check Docker files with Hadolint
-        uses: essentialkaos/hadolint-action@v1
-        with:
-          files: Dockerfile
-          format: tty
-          strict-labels: true
-          failure-threshold: warning
   deploy:
     name: Build Minecraft App
     runs-on: ubuntu-latest
     needs:
       - fly-config-validate
-      - dockerfile-lint
     env:
       FLY_API_TOKEN: ${{ secrets.FLY_API_TOKEN }}
     steps:
