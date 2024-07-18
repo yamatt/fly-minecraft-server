@@ -1,37 +1,38 @@
-# fly.toml app configuration file generated for mc-server on 2023-05-10T21:56:35+01:00
+# fly.toml app configuration file generated for minecraft-mc on 2024-07-18T19:26:58+01:00
 #
 # See https://fly.io/docs/reference/configuration/ for information about how to use this file.
 #
 
-app = "mc-server"
-primary_region = "lhr"
-kill_signal = "SIGINT"
-kill_timeout = "5s"
+app = 'minecraft-mc'
+primary_region = 'lhr'
+kill_signal = 'SIGINT'
+kill_timeout = '5s'
 
 [build]
-  image = "itzg/minecraft-server:latest"
+  image = 'itzg/minecraft-server:latest'
 
 [env]
-  AUTOSTOP_PKILL_USE_SUDO = "TRUE"
-  AUTOSTOP_TIMEOUT_EST = "120"
-  AUTOSTOP_TIMEOUT_INIT = "120"
-  ENABLE_AUTOSTOP = "TRUE"
-  EULA = "TRUE"
-  MEMORY = "1G"
-  PRIMARY_REGION = "lhr"
+  AUTOSTOP_PKILL_USE_SUDO = 'TRUE'
+  AUTOSTOP_TIMEOUT_EST = '120'
+  AUTOSTOP_TIMEOUT_INIT = '120'
+  ENABLE_AUTOSTOP = 'TRUE'
+  EULA = 'TRUE'
+  MEMORY = '1G'
+  PRIMARY_REGION = 'lhr'
 
 [[mounts]]
-  source = "mc_server"
-  destination = "/data"
-  processes = ["app"]
+  source = 'mc_server'
+  destination = '/data'
+  processes = ['app']
 
 [[services]]
-  protocol = "tcp"
+  protocol = 'tcp'
   internal_port = 25565
 
   [[services.ports]]
     port = 25565
+
   [services.concurrency]
-    type = "connections"
+    type = 'connections'
     hard_limit = 25
     soft_limit = 20
