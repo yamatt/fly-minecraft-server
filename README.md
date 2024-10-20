@@ -9,10 +9,10 @@ When the server is not used, it switches off, reducing costs. Note that you stil
 You will need a fly.io account, then install and setup the [fly.io CLI](https://fly.io/docs/flyctl/install/) then run:
 
 ```bash
-flyctl launch --name <factorio server>
+flyctl launch --name <minecraft server>
 ```
 
-Where `<factorio server>` is the name of your minecraft server
+Where `<minecraft server>` is the name of your minecraft server
 
 ## Licence
 

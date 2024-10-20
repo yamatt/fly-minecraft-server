@@ -3,13 +3,13 @@
 # See https://fly.io/docs/reference/configuration/ for information about how to use this file.
 #
 
-app = 'factorio-mc'
+app = 'minecraft-mc'
 primary_region = 'lhr'
 kill_signal = 'SIGINT'
 kill_timeout = '5s'
 
 [build]
-  image = 'factoriotools/factorio:latest'
+  image = 'itzg/minecraft-server:latest'
 
 [env]
   AUTOSTOP_PKILL_USE_SUDO = 'TRUE'
@@ -21,16 +21,16 @@ kill_timeout = '5s'
   PRIMARY_REGION = 'lhr'
 
 [[mounts]]
-  source = 'factorio_data'
-  destination = '/factorio'
+  source = 'mc_server'
+  destination = '/data'
   processes = ['app']
 
 [[services]]
-  protocol = 'udo'
-  internal_port = 34197
+  protocol = 'tcp'
+  internal_port = 25565
 
   [[services.ports]]
-    port = 34197
+    port = 25565
 
   [services.concurrency]
     type = 'connections'
